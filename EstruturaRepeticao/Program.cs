@@ -37,3 +37,47 @@ while(exibirMenu)
     }
 }
 Console.WriteLine("O programa se encerrou");
+
+//Array (Atribuição de valores e acesso)
+
+int[] arrayInteiros = new int[3];
+arrayInteiros[0] = 15;
+arrayInteiros[1] = 25;
+arrayInteiros[2] = 30;
+
+//acessando com for
+for(int contador=0; contador < arrayInteiros.Length; contador++)
+{
+    Console.WriteLine($"Posição {contador} - {arrayInteiros[contador]}");
+}
+
+//acessando com foreach
+foreach(int valor in arrayInteiros)
+{
+    Console.WriteLine(valor); 
+}
+
+//redimensionando array
+//array.Resize(ref arrayInteiros, arrayInteiros.Length * 2);
+
+//Listas (Atribuição de valores e acesso)
+
+List<string> listaString = new List<string>();
+
+listaString.Add("Koda");
+listaString.Add("Cachorro");
+listaString.Add("Irmão");
+
+//acessando com for
+for(int contador=0; contador < listaString.Count; contador++)
+{
+    Console.WriteLine($"Posição {contador} - {listaString[contador]}");
+}
+
+//acessando com foreach
+foreach(int item in listaString)
+{
+    Console.WriteLine(item); 
+}
+
+
