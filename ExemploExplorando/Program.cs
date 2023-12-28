@@ -27,3 +27,10 @@ cursoDeIngles.Alunos = new List<Pessoa>();
 cursoDeIngles.AdicionarAluno(p1);
 cursoDeIngles.AdicionarAluno(p2);
 cursoDeIngles.ListarAlunos();
+
+//Formatação de valores monetários
+
+Console.WriteLine("\n\nFormatação de valores monetários\n\n");
+
+decimal ValorMonetario = 82.40M;
+Console.WriteLine($"{ValorMonetario:C}");

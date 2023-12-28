@@ -36,6 +36,13 @@ namespace ExemploExplorando.models
             {
                 Console.WriteLine(aluno.NomeCompleto);
             }
+
+            Console.WriteLine("\n\nLista usando concatenação\n\n");
+            for(int count = 0; count<Alunos.Count; count++)
+            {
+                string texto = $"N° {count+1} -  {Alunos[count].NomeCompleto}";
+                Console.WriteLine(texto);
+            }
         }
     }
 }
