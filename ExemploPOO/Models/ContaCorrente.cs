@@ -31,7 +31,7 @@ namespace ExemploPOO.Models
 
         public void ExibirSaldo()
         {
-            Console.WriteLine("Seu saldo disponível é: " + saldo);
+            Console.WriteLine($"Seu saldo disponível é: {saldo}\n\n");
         }
     }
 }
