@@ -1,4 +1,5 @@
 ﻿using ExemploPOO.Models;
+using ExemploPOO.interfaces;
 
 //pessoa
 Pessoa p1 = new Pessoa();
@@ -34,3 +35,13 @@ Console.WriteLine("\n\nClasses abstratas\n\n");
 Corrente c = new Corrente();
 c.Creditar(500);
 c.ExibirSaldo();
+
+//Classe Object
+Console.WriteLine("\n\nClasses Object\n\n");
+Computador pc = new Computador();
+Console.WriteLine(c.ToString());
+
+//Interfaces
+Console.WriteLine("\n\nInterfaces\n\n");
+ICalculadora calc = new Calculadora();
+Console.WriteLine(calc.Multiplicar(3, 9));

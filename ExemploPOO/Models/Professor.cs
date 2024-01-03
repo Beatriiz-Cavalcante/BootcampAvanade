@@ -7,6 +7,10 @@ namespace ExemploPOO.Models
 {
     public class Professor : Pessoa
     {
+         public Professor()
+        {
+            
+        }
         //construtor com herança
         public Professor(string nome) : base(nome) 
         {
