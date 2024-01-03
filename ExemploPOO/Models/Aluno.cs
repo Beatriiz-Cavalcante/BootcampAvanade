@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 namespace ExemploPOO.Models
 {
     public class Aluno : Pessoa
-    {
+    {    
+        //construtor com herança
+        public Aluno(string nome) : base(nome) 
+        {
+
+        }
         public int Nota { get; set; }
         public override void Apresentar()
         {

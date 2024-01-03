@@ -27,3 +27,10 @@ pr1.Nome = "Lucia";
 pr1.Idade = 58;
 pr1.Salario = 1000M;
 pr1.Apresentar();
+
+
+//Classe abstratas
+Console.WriteLine("\n\nClasses abstratas\n\n");
+Corrente c = new Corrente();
+c.Creditar(500);
+c.ExibirSaldo();
