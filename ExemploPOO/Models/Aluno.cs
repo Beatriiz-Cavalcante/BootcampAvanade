@@ -8,9 +8,9 @@ namespace ExemploPOO.Models
     public class Aluno : Pessoa
     {
         public int Nota { get; set; }
-        public override Apresentar()
+        public override void Apresentar()
         {
-            Console.WriteLine($"Olá, meu nome é {nome} e eu sou estudante nota {Nota}");
+            Console.WriteLine($"Olá, meu nome é {Nome} e eu sou estudante nota {Nota}");
         }
     }
 }
