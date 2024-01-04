@@ -1,0 +1,236 @@
+Desafio 1:
+
+using System;
+
+class Pessoa
+{
+ 
+    private string nome;
+    private int idade;
+
+    //Construtor
+    public Pessoa(string n, int i)
+    {
+        nome = n;
+        idade = i;
+    }
+
+    public string GetNome()
+    {
+        return nome;
+    }
+
+    public int GetIdade()
+    {
+        return idade;
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        string nome = Console.ReadLine();
+        int idade = int.Parse(Console.ReadLine());
+        
+        Pessoa pessoa = new Pessoa(nome, idade);
+
+        Console.WriteLine($"Nome: {pessoa.GetNome()}, Idade: {pessoa.GetIdade()}");
+        
+
+    }
+}
+
+Desafio 2:
+
+using System;
+
+class Robo
+{
+    public int VelocidadeAtual { get; set; } = 0;
+    public int VelocidadeMaxima { get; }
+    public int VelocidadeMinima { get; }
+
+    public Robo(int vmin, int vmax)
+    {
+        VelocidadeMinima = vmin;
+        VelocidadeMaxima = vmax;
+        VelocidadeAtual = vmin;
+    }
+
+    public void Acelerar()
+    {
+        if (VelocidadeAtual < VelocidadeMaxima)
+        {
+            VelocidadeAtual++;
+        }
+    }
+
+    public void Desacelerar()
+    {
+        if (VelocidadeAtual > VelocidadeMinima)
+        {
+            VelocidadeAtual--;
+        }
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        string[] entrada = Console.ReadLine().Split(' ');
+        //Split que divide uma string em partes com base em um caractere ou conjunto de caracteres especificado.
+        int vmin = int.Parse(entrada[0]);
+        int vmax = int.Parse(entrada[1]);
+        
+        Robo robo = new Robo(vmin, vmax);
+        
+        string comandos = Console.ReadLine();
+        
+        foreach(char comando in comandos)
+        {
+          if(comando == 'A')
+          {
+            robo.Acelerar();  
+          }
+          else if (comando == 'D')
+          {
+            robo.Desacelerar();
+          }
+        }
+        Console.WriteLine(robo.VelocidadeAtual);
+    }
+}
+
+Desafio 3:
+
+using System;
+
+class Jogador
+{
+    public string Nome { get; set; }
+    public string Nacionalidade { get; set; }
+    public int Idade { get; set; }
+    public string Posicao { get; set; }
+
+    public Jogador(string nome, string nacionalidade, int idade, string posicao)
+    {
+      Nome = nome;
+      Nacionalidade = nacionalidade;
+      Idade = idade;
+      Posicao = posicao;
+    }
+    
+    public void Novo()
+    {
+      Console.WriteLine("Jogador criado!");
+      Console.WriteLine($"{Nome}");
+      Console.WriteLine($"{Nacionalidade}");
+      Console.WriteLine($"{Idade}");
+      Console.WriteLine($"Posição: {Posicao}");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+            string nome = Console.ReadLine();
+            string nacionalidade = Console.ReadLine(); 
+            int idade = int.Parse(Console.ReadLine());
+            string posicao = Console.ReadLine();
+
+            Jogador j1 = new Jogador(nome, nacionalidade, idade, posicao);
+            j1.Novo();
+    }
+}
+
+Desafio 4:
+
+using System;
+
+class Personagem
+{
+    public string Nome { get; set; }
+    public string Raca { get; set; }
+    public string Classe { get; set; }
+    public int Nivel { get; set; } = 1;
+    public int Vida { get; set; } = 10;
+    
+    public Personagem(string nome, string raca, string classe)
+    {
+        Nome = nome;
+        Raca = raca;
+        Classe = classe;
+    }
+
+    public void ExibirStatus()
+    {
+        Console.WriteLine("Nome:" + Nome);
+        Console.WriteLine("Raça:" + Raca);
+        Console.WriteLine("Classe:" + Classe);
+        Console.WriteLine("Nível:" + Nivel);
+        Console.WriteLine("Vida:" + Vida);
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+       string nome = Console.ReadLine();
+       string raca = Console.ReadLine();
+       string classe =  Console.ReadLine();
+        
+        Personagem p1 = new Personagem(nome, raca, classe);
+        Console.WriteLine("Status:");
+        p1.ExibirStatus();
+    }
+}
+
+Desafio 5:
+
+using System;
+
+class Personagem
+{
+    public string Nome { get; set; }
+    public int Mana { get; set; }
+
+    public Personagem(string nome, int mana)
+    {
+        Nome = nome;
+        Mana = mana;
+    }
+}
+
+class Subclasse : Personagem
+{
+    public int DanoBase { get; set; }
+    
+    //construtor
+
+    public Subclasse(string nome, int mana, int danoBase) : base(nome, mana)
+    {
+        DanoBase = danoBase;
+    }
+
+    public void CalcularDano()
+    {
+        Console.WriteLine(Nome + " atacou e causou " + DanoBase * Mana + " de dano!");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+       string nome = (Console.ReadLine());
+       int mana = int.Parse(Console.ReadLine());
+       int danoBase = int.Parse(Console.ReadLine());
+       
+       Subclasse ps1 = new Subclasse(nome, mana, danoBase);
+       ps1.CalcularDano();
+    }
+}
